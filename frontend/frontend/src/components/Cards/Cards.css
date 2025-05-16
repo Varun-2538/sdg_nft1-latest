@@ -1,0 +1,279 @@
+.grid-card {
+  display: flex;
+  flex-direction: column;
+  background-color: rgba(30, 22, 17, 0.7);
+  border-radius: 16px;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.05);
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.2);
+  height: 100%;
+}
+
+.grid-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 32px rgba(254, 108, 0, 0.15);
+  border: 1px solid rgba(254, 108, 0, 0.1);
+}
+
+.grid-card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 20px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.grid-card-title {
+  font-weight: 500;
+  font-size: 16px;
+  color: #a8a5a6;
+  margin: 0;
+  letter-spacing: 0.5px;
+}
+
+.grid-card-action {
+  width: 32px;
+  height: 32px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(254, 108, 0, 0.1);
+  transition: all 0.2s ease;
+}
+
+.grid-card-action:hover {
+  background: rgba(254, 108, 0, 0.2);
+}
+
+.grid-card-action img {
+  width: 16px;
+  height: 16px;
+  filter: brightness(0) invert(1);
+  opacity: 0.8;
+}
+
+.grid-card-content {
+  padding: 20px;
+  background: linear-gradient(
+    135deg,
+    rgba(46, 36, 30, 0.9) 0%,
+    rgba(30, 22, 17, 0.8) 100%
+  );
+  position: relative;
+  overflow: hidden;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.grid-card-content::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    45deg,
+    rgba(254, 108, 0, 0.05) 0%,
+    rgba(254, 200, 10, 0.05) 100%
+  );
+  z-index: 0;
+}
+
+.card-project {
+  position: relative;
+  z-index: 1;
+  margin-bottom: 8px;
+}
+
+.card-label {
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.6);
+  font-weight: 400;
+}
+
+.card-sdg {
+  position: relative;
+  z-index: 1;
+  font-size: 24px;
+  font-weight: 600;
+  color: #ffffff;
+  margin: 8px 0 16px 0;
+  letter-spacing: 0.5px;
+}
+
+.card-number {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.card-number-hidden {
+  font-size: 18px;
+  color: #8a8587;
+  letter-spacing: 1px;
+  margin-right: 4px;
+}
+
+.card-number-visible {
+  font-size: 16px;
+  color: #8a8587;
+}
+
+.card-footer {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-top: auto;
+}
+
+.card-expiry {
+  display: flex;
+  flex-direction: column;
+}
+
+.expiry-label {
+  font-size: 12px;
+  color: #bdbabb;
+  margin-bottom: 4px;
+}
+
+.expiry-date {
+  font-size: 14px;
+  font-weight: 500;
+  color: #ffffff;
+}
+
+.card-indicator {
+  display: flex;
+  align-items: center;
+}
+
+.indicator-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: #fe6c00;
+}
+
+.pulse {
+  position: relative;
+}
+
+.pulse::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+  background-color: rgba(254, 108, 0, 0.6);
+  border-radius: 50%;
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+    opacity: 0.8;
+  }
+  70% {
+    transform: scale(2);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 0;
+  }
+}
+
+/* Responsive adjustments */
+@media screen and (max-width: 768px) {
+  .grid-card {
+    grid-column-start: 1;
+    grid-column-end: 3;
+  }
+  
+  .card-sdg {
+    font-size: 20px;
+  }
+  
+  .card-number-hidden {
+    font-size: 16px;
+  }
+}
+/* Add these styles to your existing Cards.css file */
+
+.status-indicator {
+  display: flex;
+  align-items: center;
+  margin-top: 12px;
+  padding: 6px 10px;
+  border-radius: 4px;
+  font-size: 0.85rem;
+  width: 100%;
+}
+
+.status-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  margin-right: 8px;
+}
+
+.status-processing {
+  background-color: rgba(33, 150, 243, 0.2);
+  color: #2196f3;
+}
+
+.status-processing .status-dot {
+  background-color: #2196f3;
+}
+
+.status-pending {
+  background-color: rgba(255, 152, 0, 0.2);
+  color: #ff9800;
+}
+
+.status-pending .status-dot {
+  background-color: #ff9800;
+}
+
+.status-verified {
+  background-color: rgba(76, 175, 80, 0.2);
+  color: #4caf50;
+}
+
+.status-verified .status-dot {
+  background-color: #4caf50;
+}
+
+.status-rejected {
+  background-color: rgba(244, 67, 54, 0.2);
+  color: #f44336;
+}
+
+.status-rejected .status-dot {
+  background-color: #f44336;
+}
+
+.token-info {
+  margin-top: 8px;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.token-id-value {
+  font-family: monospace;
+  font-weight: 600;
+  color: #ff9800;
+}

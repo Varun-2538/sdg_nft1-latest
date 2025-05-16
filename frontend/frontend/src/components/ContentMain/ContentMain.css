@@ -1,0 +1,129 @@
+.main-content-holder {
+  padding: 20px 0;
+}
+
+.content-section {
+  margin-bottom: 40px;
+}
+
+.dashboard-header {
+  margin-bottom: 32px;
+}
+
+.dashboard-title {
+  font-size: 28px;
+  font-weight: 600;
+  color: #ffffff;
+  margin-bottom: 8px;
+  letter-spacing: 0.5px;
+}
+
+.dashboard-subtitle {
+  font-size: 16px;
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.dashboard-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: 24px;
+}
+
+.dashboard-grid-item {
+  min-height: 220px;
+}
+
+.section-header {
+  margin-bottom: 24px;
+  position: relative;
+}
+
+.section-title {
+  font-size: 24px;
+  font-weight: 600;
+  color: #ffffff;
+  margin-bottom: 16px;
+  letter-spacing: 0.5px;
+}
+
+.section-divider {
+  height: 3px;
+  width: 60px;
+  background: linear-gradient(to right, #fe6c00, rgba(254, 108, 0, 0.3));
+  border-radius: 3px;
+}
+
+/* Responsive adjustments */
+@media screen and (max-width: 768px) {
+  .dashboard-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .dashboard-title {
+    font-size: 24px;
+  }
+}
+
+/* Add these styles to your ContentMain.css file */
+
+.user-info {
+  display: flex;
+  gap: 16px;
+  margin-top: 8px;
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.user-detail, .user-role {
+  background: rgba(255, 255, 255, 0.1);
+  padding: 4px 12px;
+  border-radius: 16px;
+  font-weight: 500;
+}
+
+.submission-summary {
+  text-align: center;
+  margin-top: 24px;
+  padding: 16px;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 8px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.submission-summary p {
+  color: rgba(255, 255, 255, 0.8);
+  font-weight: 500;
+  margin: 0;
+}
+
+.login-link {
+  display: inline-block;
+  margin-top: 12px;
+  padding: 8px 16px;
+  background: #fe6c00;
+  color: white;
+  text-decoration: none;
+  border-radius: 6px;
+  font-weight: 500;
+  transition: background 0.2s ease;
+}
+
+.login-link:hover {
+  background: #e55a00;
+}
+
+.empty-state {
+  text-align: center;
+  padding: 48px 24px;
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.empty-state p {
+  margin-bottom: 8px;
+}
+
+.empty-state p:last-child {
+  margin-bottom: 0;
+  color: rgba(255, 255, 255, 0.8);
+  font-weight: 500;
+}
