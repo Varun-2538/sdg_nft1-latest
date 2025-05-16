@@ -41,7 +41,7 @@ mongoose.connect(process.env.MONGO_URI, {
 
 // CORS configuration
 app.use(cors({
-  origin: 'http://localhost:3000',
+  origin: 'https://sdg-nft1-latest.vercel.app',
   credentials: true,
 }));
 
@@ -72,7 +72,7 @@ passport.use(new GoogleStrategy.Strategy(
   {
     clientID: googleClientID,
     clientSecret: googleClientSecret,
-    callbackURL: 'http://localhost:5000/auth/google/callback',
+    callbackURL: 'https://sdg-nft1.onrender.com/auth/google/callback',
   },
   async (accessToken, refreshToken, profile, done) => {
     try {

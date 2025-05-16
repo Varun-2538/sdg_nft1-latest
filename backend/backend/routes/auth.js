@@ -9,11 +9,11 @@ router.get('/google', passport.authenticate('google', { scope: ['profile', 'emai
 
 router.get(
   '/google/callback',
-  passport.authenticate('google', { failureRedirect: 'http://localhost:3000/' }),
+  passport.authenticate('google', { failureRedirect: 'https://sdg-nft1-latest.vercel.app/' }),
   (req, res) => {
     console.log('User logged in via Google successfully, redirecting...');
     const redirectUrl = req.user.role === 'uploader' ? '/dashboard' : '/checker-dashboard';
-    res.redirect(`http://localhost:3000${redirectUrl}`);
+    res.redirect(`https://sdg-nft1-latest.vercel.app${redirectUrl}`);
   }
 );
 
@@ -24,7 +24,7 @@ router.get('/civic', async (req, res) => {
     res.redirect(url.toString());
   } catch (error) {
     console.error('Error building Civic login URL:', error);
-    res.redirect('http://localhost:3000/');
+    res.redirect('https://sdg-nft1-latest.vercel.app/');
   }
 });
 
@@ -56,19 +56,19 @@ router.get('/civic/callback', async (req, res) => {
       req.logIn(user, (err) => {
         if (err) {
           console.error('Error logging in user:', err);
-          return res.redirect('http://localhost:3000/');
+          return res.redirect('https://sdg-nft1-latest.vercel.app/');
         }
         
         console.log('User logged in via Civic successfully, redirecting...');
         const redirectUrl = user.role === 'uploader' ? '/dashboard' : '/checker-dashboard';
-        res.redirect(`http://localhost:3000${redirectUrl}`);
+        res.redirect(`https://sdg-nft1-latest.vercel.app${redirectUrl}`);
       });
     } else {
-      res.redirect('http://localhost:3000/');
+      res.redirect('https://sdg-nft1-latest.vercel.app/');
     }
   } catch (error) {
     console.error('Error in Civic callback:', error);
-    res.redirect('http://localhost:3000/');
+    res.redirect('https://sdg-nft1-latest.vercel.app/');
   }
 });
 
@@ -78,7 +78,7 @@ router.get('/civic/logout', async (req, res) => {
     res.redirect(url.toString());
   } catch (error) {
     console.error('Error building Civic logout URL:', error);
-    res.redirect('http://localhost:3000/');
+    res.redirect('https://sdg-nft1-latest.vercel.app/');
   }
 });
 
@@ -99,11 +99,11 @@ router.get('/logout', async (req, res) => {
         return res.redirect('/auth/civic/logout');
       }
       
-      res.redirect('http://localhost:3000/');
+      res.redirect('https://sdg-nft1-latest.vercel.app/');
     });
   } catch (error) {
     console.error('Error in logout:', error);
-    res.redirect('http://localhost:3000/');
+    res.redirect('https://sdg-nft1-latest.vercel.app/');
   }
 });
 
