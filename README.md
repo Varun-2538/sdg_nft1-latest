@@ -198,13 +198,5 @@ Commit changes (git commit -m "Add your feature").
 Push to the branch (git push origin feature/your-feature).
 Open a Pull Request.
 
-License
-This project is licensed under the MIT License. See the LICENSE file for details.
-Contact
-For questions or support, contact the maintainers at:
-
-Email: [your-email@example.com]
-GitHub Issues: your-repo/sdg_nft/issues
-
 
 Empowering sustainable impact through blockchain technology with SDG_NFT! 🌱
