@@ -27,7 +27,7 @@ const SDGUploadForm = ({ onSubmissionComplete }) => {
   useEffect(() => {
     const checkAuth = async () => {
       try {
-        const response = await axios.get('http://localhost:5000/auth/check', { withCredentials: true });
+        const response = await axios.get('https://sdg-nft1.onrender.com/auth/check', { withCredentials: true });
         setIsAuthenticated(response.data.isAuthenticated);
       } catch (err) {
         console.error('Auth check failed:', err);
@@ -100,7 +100,7 @@ const SDGUploadForm = ({ onSubmissionComplete }) => {
 
       // Store complete submission data in MongoDB via backend
       const backendResponse = await axios.post(
-        'http://localhost:5000/upload',
+        'https://sdg-nft1.onrender.com/upload',
         { 
           ipfsHash: hash,
           submissionData: submissionData // Send the complete submission data
@@ -124,7 +124,7 @@ const SDGUploadForm = ({ onSubmissionComplete }) => {
   };
 
   const handleLoginRedirect = () => {
-    window.location.href = 'http://localhost:5000/auth/google'; // Redirect to Google OAuth
+    window.location.href = 'https://sdg-nft1.onrender.com/auth/google'; // Redirect to Google OAuth
   };
 
   const copyToClipboard = (text) => {

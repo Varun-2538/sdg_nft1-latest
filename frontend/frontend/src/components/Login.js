@@ -16,7 +16,7 @@ const Login = () => {
         return;
       }
       try {
-        const response = await axios.get('http://localhost:5000/auth/check', {
+        const response = await axios.get('https://sdg-nft1.onrender.com/auth/check', {
           withCredentials: true,
         });
         if (response.data.isAuthenticated) {
@@ -70,7 +70,7 @@ const Login = () => {
             <h1 className="login-heading">Log in to your account</h1>
             <p className="login-subheading">Don't have an account? <a href="#" className="signup-link">Sign Up</a></p>
             <div className="auth-buttons">
-              <a href="http://localhost:5000/auth/google" className="auth-button google-button">
+              <a href="https://sdg-nft1.onrender.com/auth/google" className="auth-button google-button">
                 <FcGoogle className="auth-icon" />
                 <span>Continue with Google as user</span>
               </a>

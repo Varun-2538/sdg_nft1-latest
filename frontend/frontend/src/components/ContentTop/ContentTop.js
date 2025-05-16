@@ -33,7 +33,7 @@ const ContentTop = () => {
   const fetchUserData = async () => {
     try {
       // Get user authentication info
-      const authResponse = await axios.get('http://localhost:5000/auth/check', {
+      const authResponse = await axios.get('https://sdg-nft1.onrender.com/auth/check', {
         withCredentials: true
       });
 
@@ -41,7 +41,7 @@ const ContentTop = () => {
         setUserInfo(authResponse.data.user);
 
         // Get user's submission count
-        const submissionsResponse = await axios.get('http://localhost:5000/upload/submissions', {
+        const submissionsResponse = await axios.get('https://sdg-nft1.onrender.com/upload/submissions', {
           withCredentials: true
         });
 
@@ -56,7 +56,7 @@ const ContentTop = () => {
 
   const handleLogout = async () => {
     try {
-      await axios.get('http://localhost:5000/auth/logout', {
+      await axios.get('https://sdg-nft1.onrender.com/auth/logout', {
         withCredentials: true
       });
       // Redirect to home page

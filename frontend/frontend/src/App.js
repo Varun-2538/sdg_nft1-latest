@@ -31,7 +31,7 @@ function App() {
 
   const fetchUserData = useCallback(async () => {
     try {
-      const response = await axios.get('http://localhost:5000/auth/check', { withCredentials: true });
+      const response = await axios.get('https://sdg-nft1.onrender.com/auth/check', { withCredentials: true });
       if (response.data.isAuthenticated) {
         setUserData(response.data.user);
       }

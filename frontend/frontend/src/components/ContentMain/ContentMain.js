@@ -14,7 +14,7 @@ const ContentMain = () => {
   // Function to check user authentication and get user info
   const checkUserAuth = async () => {
     try {
-      const response = await axios.get('http://localhost:5000/auth/check', {
+      const response = await axios.get('https://sdg-nft1.onrender.com/auth/check', {
         withCredentials: true
       });
       
@@ -45,7 +45,7 @@ const ContentMain = () => {
         return;
       }
       
-      const response = await axios.get('http://localhost:5000/upload/submissions', {
+      const response = await axios.get('https://sdg-nft1.onrender.com/upload/submissions', {
         withCredentials: true // Send session cookie for authentication
       });
      

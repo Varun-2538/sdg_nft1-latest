@@ -60,7 +60,7 @@ const VerifierPage = () => {
       setLoading(true);
       
       // Fetch submissions without authentication
-      const submissionsResponse = await axios.get('http://localhost:5000/upload/all-submissions-simple');
+      const submissionsResponse = await axios.get('https://sdg-nft1.onrender.com/upload/all-submissions-simple');
       
       console.log('Submissions response:', submissionsResponse.data);
       
@@ -77,7 +77,7 @@ const VerifierPage = () => {
       }
       
       // Fetch all users and their IPFS hashes without authentication
-      const response = await axios.get('http://localhost:5000/upload/all-users-hashes');
+      const response = await axios.get('https://sdg-nft1.onrender.com/upload/all-users-hashes');
       console.log('Users API Response:', response.data);
       
       if (response.data.success) {
@@ -182,7 +182,7 @@ const VerifierPage = () => {
       const timestamp = new Date().getTime();
       
       const response = await axios.put(
-        `http://localhost:5000/upload/update-status/${ipfsHash}?t=${timestamp}`,
+        `https://sdg-nft1.onrender.com/upload/update-status/${ipfsHash}?t=${timestamp}`,
         updateData,
         { 
           withCredentials: true,
@@ -531,7 +531,7 @@ const VerifierPage = () => {
   // Check status directly from the database for debugging
   const checkStatusDirectly = async (hash) => {
     try {
-      const response = await axios.get(`http://localhost:5000/upload/check-status/${hash}`, {
+      const response = await axios.get(`https://sdg-nft1.onrender.com/upload/check-status/${hash}`, {
         withCredentials: true
       });
       console.log(`Direct status check for ${hash}:`, response.data);
